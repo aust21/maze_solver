@@ -29,8 +29,8 @@ def floydWarShall(graph):
 
 
 def reconstruct_path(start_node, end_node, distance):
-	# this is not my code, the made me do it.....
-	
+	# this is not my code, they made me do it.....
+
 	path = [end_node]
 
 	while end_node != start_node:
