@@ -5,8 +5,7 @@ def show_solution(distance):
 		print(dist)
 
 
-distance = algorith.floydWarShall(algorith.graph)
-
+distance = algorith.distance
 
 if __name__ == "__main__":
 	show_solution(distance)

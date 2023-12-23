@@ -1,11 +1,13 @@
 import maze
 
+graph = [list(x) for x in maze.the_maze]
+
 def floydWarShall(graph):
 
 	num_of_nodes = len(graph)
 
 	# initial distances set to infinity
-	distance = [[float("inf")] * num_of_nodes for _ in range(num_of_nodes)]
+	distance = [[5] * num_of_nodes for _ in range(num_of_nodes)]
 
 	# set the distance from a node to itself to zero
 	for i in range(num_of_nodes):
@@ -25,4 +27,21 @@ def floydWarShall(graph):
 
 	return distance
 
-graph = maze.the_maze
+
+def reconstruct_path(start_node, end_node, distance):
+	# this is not my code, the made me do it.....
+	
+	path = [end_node]
+
+	while end_node != start_node:
+		for k in range(len(graph)):
+			if distance[start_node][k] + distance[k][end_node] == distance[start_node][end_node]:
+				path.append(k)
+				end_node = k
+				 
+		return path
+
+
+distance = floydWarShall(graph)
+# a = reconstruct_path(6, 2, distance)
+# print(a)
