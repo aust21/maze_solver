@@ -21,7 +21,7 @@ def floydWarShall(graph):
 	for k in range(num_of_nodes):
 		for i in range(num_of_nodes):
 			for j in range(num_of_nodes):
-				distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j])
+				distance[i][j] = min(distance[i][j], distance[k][i] + distance[k][j])
 
 	return distance
 
